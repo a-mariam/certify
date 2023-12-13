@@ -20,12 +20,7 @@ public class CertifyAdminService implements AdminService {
     private final StudentRepository studentRepository;
     private final CertificateRepository certificateRepository;
     private final SchoolRepository schoolRepository;
-    @Override
-    public Student registerStudent(RegisterStudentRequest request) throws CertifyException {
-        if (checkIfStudentWithPhoneNumberExist(request.getPhoneNumber())) throw new CertifyException("Student already exist");
-        Student student = Mapper.mapper(request);
-        return studentRepository.save(student);
-    }
+
 
     @Override
     public boolean checkIfStudentWithPhoneNumberExist(String phoneNumber) {

@@ -29,7 +29,7 @@ public class Mapper {
     public static School mapper(RegisterSchoolRequest request) {
         School school = new School();
         school.setName(request.getName());
-        school.setInstitutionId(request.getInstitutionId());
+        school.setCEEB(request.getSchoolCode());
         school.setPassword(request.getPassword());
         school.setEmail(request.getEmail());
         return school;

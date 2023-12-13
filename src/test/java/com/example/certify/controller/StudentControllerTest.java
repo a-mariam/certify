@@ -34,7 +34,7 @@ public class StudentControllerTest {
 
         try {
             byte [] content = objectMapper.writeValueAsBytes(request);
-            mockMvc.perform(post("/api/v1/register/student")
+            mockMvc.perform(post("/api/v1/register/")
                     .content(content)
                     .contentType(MediaType.APPLICATION_JSON))
                     .andExpect(status().is2xxSuccessful())

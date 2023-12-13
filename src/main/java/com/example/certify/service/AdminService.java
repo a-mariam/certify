@@ -12,7 +12,6 @@ import java.security.cert.CertificateException;
 
 @Service
 public interface AdminService {
-    Student registerStudent(RegisterStudentRequest request) throws CertificateException, CertifyException;
     boolean checkIfStudentWithPhoneNumberExist(String phoneNumber);
 
     Student findStudentByPhoneNumber(String number) throws CertifyException;
