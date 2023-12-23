@@ -8,9 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.mock.web.MockMultipartFile;
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
+
 import java.util.Map;
 
 @Service
@@ -22,8 +20,7 @@ public class CertifyCloudService implements CloudService{
 
 
     @Override
-    public String upload(String file) throws CertifyException {
-        MultipartFile multipartFile =  convertToMultipartFile(file);
+    public String upload(MultipartFile multipartFile) throws CertifyException {
 
         try {
             Map<?,?> uploadResponse = cloudinary.uploader().upload(multipartFile.getBytes(), ObjectUtils.asMap(
@@ -37,12 +34,5 @@ public class CertifyCloudService implements CloudService{
         }
     }
 
-    private MultipartFile convertToMultipartFile(String file) throws CertifyException {
-        Path path = Path.of(file);
-       try(InputStream inputStream = Files.newInputStream(path)){
-           return new MockMultipartFile();
-       }catch (Exception e){
-           throw new CertifyException("error occur while converting file");
-       }
-    }
-}
+   }
+
