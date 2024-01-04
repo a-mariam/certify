@@ -7,7 +7,6 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.mock.web.MockMultipartFile;
 
 import java.util.Map;
 
@@ -30,7 +29,7 @@ public class CertifyCloudService implements CloudService{
             log.info("upload response {} " + uploadResponse);
             return secureUrl;
         } catch (Exception e) {
-          throw  new CertifyException("error occur while uploading");
+          throw  new CertifyException(e.getMessage());
         }
     }
 
