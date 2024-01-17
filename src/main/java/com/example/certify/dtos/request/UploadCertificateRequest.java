@@ -9,5 +9,6 @@ public class UploadCertificateRequest {
 
     private  String fileUrl;
     private  String description;
-    private  Long studentId;
+    private  String studentId;
+    private String schoolId;
 }

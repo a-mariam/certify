@@ -64,15 +64,14 @@ public class CertifyStudentServiceTest {
 
     @Test
     public void testThat_StudentCanUpload() throws CertifyException {
-        Student foundStudent = appAdminService.findStudentByPhoneNumber("09044063892");
+        Student foundStudent = appAdminService.findStudentByPhoneNumber("07044063892");
 
         UploadCertificateRequest upload = new UploadCertificateRequest();
         upload.setDescription("C:\\Users\\mariam\\IdeaProjects\\Certify\\src\\main\\resources\\image\\SULWE-Netflix-movie-jpg.webp");
         upload.setDescription("still working on it");
-        upload.setStudentId(foundStudent.getId());
+        upload.setStudentId(foundStudent.getId().toString());
         Certificate certificate = studentService.upload(upload);
-        Student foundStudentAfter = appAdminService.findStudentByPhoneNumber("09044063892");
-
+        Student foundStudentAfter = appAdminService.findStudentByPhoneNumber("07044063892");
         assertNotNull(certificate);
         assertEquals(1,foundStudentAfter.getCertificates().size());
     }

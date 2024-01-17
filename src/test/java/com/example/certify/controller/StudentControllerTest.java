@@ -28,7 +28,7 @@ public class StudentControllerTest {
         RegisterStudentRequest request = new RegisterStudentRequest();
         request.setEmail("moon@gmail.com");
         request.setPassword("moon.com");
-        request.setPhoneNumber("08038399586");
+        request.setPhoneNumber("08038309586");
         request.setSecondName("moon");
         request.setFirstName("mama");
 
@@ -44,5 +44,6 @@ public class StudentControllerTest {
         }
 
     }
-
+//    @Test
+//    public void testThat
 }
