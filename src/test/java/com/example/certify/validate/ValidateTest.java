@@ -31,7 +31,7 @@ public class ValidateTest {
 
 
 //       assertTrue(Validate.checkIfPhoneNumberIsValid(i));
-//       assertTrue(Validate.checkIfPhoneNumberIsValid("07034474839"));
+       assertTrue(Validate.checkIfPhoneNumberIsValid("+2347023348494"));
         assertTrue(Validate.checkIfPhoneNumberIsValid("09034474839"));
         assertTrue(Validate.checkIfPhoneNumberIsValid("08034474839"));
 

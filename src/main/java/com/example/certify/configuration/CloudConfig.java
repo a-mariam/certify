@@ -13,7 +13,7 @@ public class CloudConfig {
     private String cloudApiKey;
     @Value("$cloud_name")
     private String cloudName;
-    @Value("$secret_keyy")
+    @Value("$api_secret")
     private String cloudSecretKey;
 
     @Bean

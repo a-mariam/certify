@@ -70,6 +70,7 @@ public class CertifyStudentServiceTest {
         upload.setDescription("C:\\Users\\mariam\\IdeaProjects\\Certify\\src\\main\\resources\\image\\SULWE-Netflix-movie-jpg.webp");
         upload.setDescription("still working on it");
         upload.setStudentId(foundStudent.getId().toString());
+        upload.setSchoolId("1");
         Certificate certificate = studentService.upload(upload);
         Student foundStudentAfter = appAdminService.findStudentByPhoneNumber("07044063892");
         assertNotNull(certificate);

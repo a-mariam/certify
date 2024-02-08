@@ -31,12 +31,14 @@ public class Validate {
      return true;
     }
     public static boolean checkIfPhoneNumberIsValid(String phoneNumber){
-        String regex =  "([+]{1}[234]{1}[0–9]{10})|([234][0–9]{10})|([0]{1}[7|8|9]{1}[0|1]{1}[0–9]{8})";
-        String re = "[0][8|9|7}{1}[0-9]{8}";
-        String reg = "[[0][7|8|9]{1}[0|1]{1}[0-9]{8}]";
-//        return regex.matches(email);
-//
-        return true;
+//        String regex =  "[+]\\d{1}[234][0–9]\\d{11}";
+//         String regex2 = "([234][0–9]\\d{11})";
+//          String regex3 =  "([07]|[08]|[09][0|1][0–9]\\d{11})";
+
+//        if (phoneNumber.matches(regex) || phoneNumber.matches(regex2) || phoneNumber.matches(regex3))
+//            return true;
+        String regex = "((^+)(234)(70|80|90|81|71|91)[0-9]{10})";
+        return phoneNumber.matches(regex);
     }
 
 
